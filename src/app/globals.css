@@ -3,56 +3,67 @@
 @tailwind utilities;
 
 :root {
-  --canvas-base: #06080E;
-  --surface-titanium-1: #0A0F1D;
-  --surface-titanium-2: #111827;
-  --surface-elevated-glass: rgba(17, 24, 39, 0.75);
-  --andina-cyan: #06B6D4;
-  --andina-sky: #0284C7;
-  --andina-blue: #2563EB;
-  --andina-emerald: #10B981;
-  --andina-gold: #F59E0B;
-  --cordano-burgundy: #80093A;
-  --cordano-burgundy-light: #A52C55;
+  --background: #f8fafc;
+  --foreground: #0f172a;
 }
 
 body {
-  background-color: var(--canvas-base);
-  color: #F8FAFC;
-  font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
-  overflow-x: hidden;
+  color: var(--foreground);
+  background: var(--background);
+  font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif;
+  -webkit-font-smoothing: antialiased;
 }
 
-/* Clases de Material Liquid Glass inspiradas en macOS */
-.liquid-glass-card {
-  background: rgba(15, 23, 42, 0.65);
-  backdrop-filter: blur(20px);
-  -webkit-backdrop-filter: blur(20px);
-  border: 1px solid rgba(255, 255, 255, 0.1);
-  box-shadow: 0 20px 40px -15px rgba(0, 0, 0, 0.7), inset 0 1px 0 rgba(255, 255, 255, 0.15);
+/* Tipografía de alta legibilidad para el POS */
+.pos-mono {
+  font-family: ui-monospace, SFMono-Regular, Menlo, Monaco, Consolas, "Liberation Mono", "Courier New", monospace;
+  letter-spacing: 0.05em;
+  font-variant-numeric: tabular-nums;
 }
 
-.liquid-glass-nav {
-  background: rgba(6, 8, 14, 0.82);
+/* 
+  ==========================================
+  LIQUID GLASS & macOS AESTHETIC TOKENS
+  ==========================================
+*/
+
+.glass-panel {
+  background: linear-gradient(180deg, rgba(30, 41, 59, 0.6) 0%, rgba(15, 23, 42, 0.8) 100%);
   backdrop-filter: blur(24px);
   -webkit-backdrop-filter: blur(24px);
-  border-bottom: 1px solid rgba(255, 255, 255, 0.08);
+  border: 1px solid rgba(255, 255, 255, 0.08);
+  box-shadow: 0 25px 50px -12px rgba(0, 0, 0, 0.5), inset 0 1px 0 rgba(255, 255, 255, 0.1);
 }
 
-.metallic-button {
-  background: linear-gradient(135deg, #0284C7 0%, #06B6D4 50%, #2563EB 100%);
-  box-shadow: 0 4px 20px rgba(6, 182, 212, 0.35), inset 0 1px 0 rgba(255, 255, 255, 0.3);
-  border: 1px solid rgba(255, 255, 255, 0.2);
-  transition: all 0.2s cubic-bezier(0.16, 1, 0.3, 1);
+.macos-btn {
+  background: linear-gradient(180deg, rgba(255, 255, 255, 0.12) 0%, rgba(255, 255, 255, 0.02) 100%);
+  box-shadow: inset 0 1px 0 rgba(255, 255, 255, 0.2), 0 4px 6px rgba(0, 0, 0, 0.3);
+  border: 1px solid rgba(255, 255, 255, 0.1);
+  transition: all 0.4s cubic-bezier(0.23, 1, 0.32, 1);
 }
 
-.metallic-button:hover {
-  transform: translateY(-1px);
-  box-shadow: 0 8px 30px rgba(6, 182, 212, 0.5), inset 0 1px 0 rgba(255, 255, 255, 0.4);
+.macos-btn:active {
+  transform: scale(0.96);
+  box-shadow: inset 0 2px 4px rgba(0, 0, 0, 0.4), 0 1px 2px rgba(0, 0, 0, 0.2);
 }
 
-.metallic-cordano-button {
-  background: linear-gradient(135deg, #80093A 0%, #A52C55 50%, #80093A 100%);
-  box-shadow: 0 4px 20px rgba(128, 9, 58, 0.35), inset 0 1px 0 rgba(255, 255, 255, 0.25);
-  border: 1px solid rgba(255, 255, 255, 0.15);
+.macos-btn-primary {
+  background: linear-gradient(180deg, #b01553 0%, #80093A 100%);
+  box-shadow: inset 0 1px 0 rgba(255, 255, 255, 0.3), 0 8px 16px rgba(128, 9, 58, 0.4);
+  border: 1px solid #5a0426;
+  text-shadow: 0 1px 2px rgba(0,0,0,0.4);
+  transition: all 0.4s cubic-bezier(0.23, 1, 0.32, 1);
+}
+
+.macos-btn-primary:active {
+  transform: scale(0.96);
+  box-shadow: inset 0 3px 6px rgba(0, 0, 0, 0.4), 0 2px 4px rgba(128, 9, 58, 0.3);
+}
+
+.spring-anim {
+  transition: all 0.5s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+}
+
+.text-glow {
+  text-shadow: 0 0 20px rgba(255, 255, 255, 0.3);
 }
