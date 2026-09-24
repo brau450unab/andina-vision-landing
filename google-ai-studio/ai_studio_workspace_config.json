@@ -1,0 +1,10 @@
+{
+  "workspace_version": "2026.1",
+  "gcp_project_id": "gen-lang-client-0862587160",
+  "gcp_project_number": "349577440002",
+  "recommended_models": ["gemini-1.5-pro", "gemini-2.0-flash"],
+  "temperature": 0.2,
+  "system_instruction_file": "./system_instructions.md",
+  "cloud_run_service": "andina-vision-landing",
+  "stitch_project_id": "projects/12916038623650348087"
+}

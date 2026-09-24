@@ -1,0 +1,23 @@
+{
+  "project_name": "Andina Vision 360 - Google AI Studio Suite",
+  "prompts": [
+    {
+      "id": "generate-360-hotspots",
+      "title": "Generador de Hotspots para Escenas 360°",
+      "description": "Analiza una imagen o descripción de espacio y genera coordenadas 3D para puntos de interés en Three.js.",
+      "template": "Dada la siguiente imagen o descripción de espacio: {{scene_description}}, genera un arreglo JSON con los puntos de interés (hotspots) calculando sus posiciones tridimensionales [x, y, z] en una esfera unitaria, junto con su título y contenido informativo."
+    },
+    {
+      "id": "drone-mission-analyzer",
+      "title": "Analizador de Misiones de Drones DJI",
+      "description": "Calcula el plan de vuelo óptimo, tiempo de batería y solape (overlap) para fotogrametría según superficie en m².",
+      "template": "Calcula el plan de vuelo para un dron DJI Mavic 3 Enterprise en la ubicación {{location}}, para un polígono de {{area_m2}} m². Considera solape frontal 80%, solape lateral 70%, GSD menor a 1.5 cm/px y altura de vuelo máxima permitida."
+    },
+    {
+      "id": "ui-component-generator",
+      "title": "Generador de Componentes Liquid Glass",
+      "description": "Genera componentes de React 19 y Tailwind con estética macOS Liquid Glass.",
+      "template": "Crea un componente de React con Tailwind CSS para {{component_name}}, siguiendo la estética Liquid Glass: fondo con desenfoque de 20px, bordes hairline blancos semitransparentes y botones con degradé cian metálico."
+    }
+  ]
+}

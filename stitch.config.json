@@ -1,0 +1,15 @@
+{
+  "projectId": "projects/12916038623650348087",
+  "projectName": "NUEVO PMS CORDANO - ParkOps Iquique & Andina Vision",
+  "designSystem": {
+    "name": "Andina Liquid Glass & Cordano Burgundy",
+    "version": "2.0.0",
+    "theme": "dark",
+    "designMdPath": "./DESIGN.md"
+  },
+  "screens": [
+    { "id": "landing", "path": "src/app/page.tsx", "title": "Andina Vision Landing" },
+    { "id": "tours-360", "path": "src/app/tours/page.tsx", "title": "Visor 360 Showcase" },
+    { "id": "pricing", "path": "src/components/PricingCalculator.tsx", "title": "Cotizador Interactivo" }
+  ]
+}

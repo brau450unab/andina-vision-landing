@@ -1,0 +1,28 @@
+steps:
+  # 1. Compilar imagen de contenedor en Cloud Build
+  - name: 'gcr.io/cloud-builders/docker'
+    args: ['build', '-t', 'gcr.io/$PROJECT_ID/andina-vision-landing:$COMMIT_SHA', '.']
+
+  # 2. Subir imagen a Container Registry
+  - name: 'gcr.io/cloud-builders/docker'
+    args: ['push', 'gcr.io/$PROJECT_ID/andina-vision-landing:$COMMIT_SHA']
+
+  # 3. Desplegar en Google Cloud Run (us-west1)
+  - name: 'gcr.io/google.com/cloudsdktool/cloud-sdk'
+    entrypoint: gcloud
+    args:
+      - 'run'
+      - 'deploy'
+      - 'andina-vision-landing'
+      - '--image'
+      - 'gcr.io/$PROJECT_ID/andina-vision-landing:$COMMIT_SHA'
+      - '--region'
+      - 'us-west1'
+      - '--platform'
+      - 'managed'
+      - '--allow-unauthenticated'
+      - '--port'
+      - '8080'
+
+images:
+  - 'gcr.io/$PROJECT_ID/andina-vision-landing:$COMMIT_SHA'
